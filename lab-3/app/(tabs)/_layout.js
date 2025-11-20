@@ -1,26 +1,28 @@
-import FontAwesome from '@expo/vector-icons/FontAwesome';
-import { Tabs } from 'expo-router';
+import { Tabs } from "expo-router";
+import { Ionicons } from "@expo/vector-icons";
 
-function TabBarIcon(props) {
-  return <FontAwesome size={28} {...props} />;
-}
-
-export default function TabLayout() {
+export default function MainLayout() {
 
   return (
-    <Tabs>
+    <Tabs
+      screenOptions={{
+        headerShown: false,
+        tabBarActiveTintColor: "#6200EE",
+        tabBarInactiveTintColor: "gray"
+      }}
+    >
       <Tabs.Screen
         name="recipes"
         options={{
-          title: 'Recipes',
-          tabBarIcon: ({ color }) => <TabBarIcon name="book" color={color} />,
+          title: "Recipes",
+          tabBarIcon: ({ color, size }) => <Ionicons name="book-outline" size={size} color={color} />,
         }}
       />
       <Tabs.Screen
         name="personal"
         options={{
-          title: 'Personal',
-          tabBarIcon: ({ color }) => <TabBarIcon name="user" color={color} />,
+          title: "Personal",
+          tabBarIcon: ({ color, size }) => <Ionicons name="person-outline" size={size} color={color} />,
         }}
       />
     </Tabs>

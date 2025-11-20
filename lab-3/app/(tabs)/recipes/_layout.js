@@ -1,0 +1,11 @@
+// app/(tabs)/feed/_layout.tsx
+import { Stack } from 'expo-router';
+
+export default function RecipesLayout() {
+  return (
+    <Stack>
+      <Stack.Screen name="index" options={{ title: 'Recipes' }} />
+      <Stack.Screen name="[id]" options={{ title: 'Recipe Details' }} />
+    </Stack>
+  );
+}
